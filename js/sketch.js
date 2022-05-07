@@ -39,6 +39,25 @@ var welcomeSketch = function(p){
         }
     }
 };
+
+var taskFour = function(p){
+    var width = document.getElementById("view_container").offsetWidth;
+
+    p.setup = function (){
+        p.createCanvas(width, 400);
+    }
+
+    p.draw = function(){
+        p.background(0);
+        p.fill(14,39,182);
+        p.rect(width/2 - 100, 50, 200, 200);
+        p.fill(228,2,0);
+        p.circle(width/2, 150, 120);
+        p.fill(243,234,51);
+        p.triangle(width/2, 80, width/2 - 70, 200, width/2 + 70, 200);
+    }
+}
+
 var taskThree = function(p){
     var width = document.getElementById("view_container").offsetWidth;
 

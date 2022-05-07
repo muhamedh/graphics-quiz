@@ -3,7 +3,7 @@ $("#question").hide();
 $("#score").hide();
 
 var myp5 = new p5(welcomeSketch, 'view_container');
-var taskCounter = 0;
+
 var score = 0;
 
 $('body').one( "keypress", function() {
@@ -12,7 +12,7 @@ $('body').one( "keypress", function() {
    $("#options").show();
    $("#question").show();
    $("#score").show();
-   taskCounter = taskCounter + 1;
+
    
    t1();
    
@@ -31,9 +31,36 @@ var disableEventHandler = function(){
     $("#option3").off();
     $("#option4").off();
 }
+
+var t5 = function(){
+    console.log("hello from t5");
+}
 var t4 = function(){
     console.log('hello from t4');
+    myp5.remove();
+    myp5 = new p5(taskFour, 'view_container');
+    setQuestion("what is the correct sequence of instructions to generate this image?", "box(blue), triangle(yellow), circle(red)", "box(blue), yellow(triangle), circle(red)", "box(blue), circle(red), triangle(yellow)", "box(blue), crcle(red), triangle(yelow)");
+    $('#option1').one("click", function(){
+        disableEventHandler();
+        t5();
+    });
+    $('#option2').one("click", function(){
+        disableEventHandler();
+        t5();
+    });
+    $('#option3').one("click", function(){
+        console.log('correct!');
+        score += 100;
+        $("#score-holder").html("SCORE = " + score);
+        disableEventHandler();
+        t5();
+    });
+    $('#option4').one("click", function(){
+        disableEventHandler();
+        t5();
+    });
 }
+
 var t3 = function(){
     console.log("hello from t3");
     myp5.remove();
@@ -46,7 +73,7 @@ var t3 = function(){
     $('#option2').one("click", function(){
         console.log('correct!');
         score += 100;
-        $("#score-holder").html("SCORE =" + score);
+        $("#score-holder").html("SCORE = " + score);
         disableEventHandler();
         t4();
     });
@@ -80,7 +107,7 @@ var t2 = function(){
     $('#option3').one("click", function(){
         console.log('correct!');
         score += 100;
-        $("#score-holder").html("SCORE =" + score);
+        $("#score-holder").html("SCORE = " + score);
         disableEventHandler();
         t3();
     });
@@ -92,13 +119,12 @@ var t2 = function(){
 }
 
 var t1 = function(){
-    taskCounter++;
 
     setQuestion("circle(red) displays a red circle,<br> select the option which will display a blue circle!","circle(blue)","blue(circle)","circle(bleu)", "circle(red)");
     $('#option1').one("click", function(){
         console.log('correct!');
         score += 100;
-        $("#score-holder").html("SCORE =" + score);
+        $("#score-holder").html("SCORE = " + score);
         disableEventHandler();
         t2();
     });
