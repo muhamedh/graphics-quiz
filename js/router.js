@@ -1,7 +1,7 @@
 $("#options").hide();
 $("#question").hide();
 $("#score").hide();
-
+$("#submit-form").hide();
 var myp5 = new p5(welcomeSketch, 'view_container');
 
 var score = 0;
@@ -12,9 +12,9 @@ $('body').one( "keypress", function() {
    $("#options").show();
    $("#question").show();
    $("#score").show();
-
    
-   t6(); // comment to t1 when finished testing
+   
+   submit(); // comment to t1 when finished testing
    
 });
 
@@ -31,10 +31,40 @@ var disableEventHandler = function(){
     $("#option3").off();
     $("#option4").off();
 }
+var submit = function(){
+    console.log("hello from submit");
+    myp5.remove();
+    myp5 = new p5(submitUsername, 'view_container');
+    $("#score-container").hide();
+    $("#options").hide();
+    $("#question").hide();
+    $("#submit-form").show();
+};
+
 var t6 = function(){
     console.log("hello from t6");
     myp5.remove();
     myp5 = new p5(taskSix, 'view_container');
+    setQuestion("what is the correct order in the repeat function which will play the above shown animation? (hint : it starts in the top left corner)", "repeat[right(), down(), left(), up()]","repeat[right(), up(), left(), up()]","repeat[right(), down(), right(), up()]","repeat[left(), up(), right(), down()]");
+    $('#option1').one("click", function(){
+        console.log('correct!');
+        score += 100;
+        $("#score-holder").html("SCORE = " + score);
+        disableEventHandler();
+        submit();
+    });
+    $('#option2').one("click", function(){
+        disableEventHandler();
+        submit();
+    });
+    $('#option3').one("click", function(){
+        disableEventHandler();
+        submit();
+    });
+    $('#option4').one("click", function(){
+        disableEventHandler();
+        submit();
+    });
 }
 var t5 = function(){
     console.log("hello from t5");
