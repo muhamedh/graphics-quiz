@@ -14,7 +14,7 @@ $('body').one( "keypress", function() {
    $("#score").show();
 
    
-   t1();
+   t6(); // comment to t1 when finished testing
    
 });
 
@@ -31,9 +31,36 @@ var disableEventHandler = function(){
     $("#option3").off();
     $("#option4").off();
 }
-
+var t6 = function(){
+    console.log("hello from t6");
+    myp5.remove();
+    myp5 = new p5(taskSix, 'view_container');
+}
 var t5 = function(){
     console.log("hello from t5");
+    myp5.remove();
+    myp5 = new p5(taskFive, 'view_container');
+    setQuestion("everything inside repeat[functions go here] will be repeated forever,<br> left() moves our box to the left and right() moves it to the right side,<br> what is the correct order?", "repeat[up(), down()]", "repeat[down(), up()]","repeat[right(), left()]", "repeat[move]");
+    $('#option1').one("click", function(){
+        disableEventHandler();
+        t6();
+    });
+    $('#option2').one("click", function(){
+        disableEventHandler();
+        t6();
+    });
+    $('#option3').one("click", function(){
+        console.log('correct!');
+        score += 100;
+        $("#score-holder").html("SCORE = " + score);
+        disableEventHandler();
+        t6();
+    });
+    $('#option4').one("click", function(){
+        disableEventHandler();
+        t6();
+    });
+
 }
 var t4 = function(){
     console.log('hello from t4');
