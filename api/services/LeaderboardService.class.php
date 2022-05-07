@@ -11,12 +11,13 @@ class LeaderboardService extends BaseService{
     public function __construct(){
       parent::__construct(new LeaderboardDao());
     }
-    public function get_all()
-    {
+    
+    public function get_all() {
         return $this->dao->get_all();
     }
+
+    public function get_sorted_leaderboard(){
+      return $this->dao->query_no_params("SELECT * FROM leaderboard ORDER BY score DESC");
+    }
+
   }
-  
-
-
-?>
