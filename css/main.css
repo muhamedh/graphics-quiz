@@ -1,0 +1,23 @@
+body{
+    font-family: 'Inconsolata', monospace !important;
+    background-color: black;
+}
+
+#task-description{
+    color: #1eb60e !important;
+    text-align: center; 
+    margin: 50px;
+}
+#score{
+    color: #1eb60e !important;
+    text-align: right;
+    margin: 50px;
+}
+
+.btn{
+    outline-color: #1eb60e !important;
+    color : #1eb60e;
+}
+.btn:hover{
+    background-color: #1eb60e;
+}
