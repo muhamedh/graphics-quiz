@@ -10,8 +10,6 @@ class LeaderboardDao extends BaseDao{
         parent::__construct("leaderboard");
     }
 
-    public function get_sorted_leaderboard(){
-        return $this->query_no_params("SELECT * FROM leaderboard ORDER BY score DESC");
-    }
+
 }
 ?>
