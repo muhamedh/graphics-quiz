@@ -1,5 +1,3 @@
-
-
 var welcomeSketch = function (p) {
 
     var width = document.getElementById("view_container").offsetWidth;
@@ -76,6 +74,155 @@ var submitUsername = function(p){
         }
     }
 }
+
+var taskTen = function(p){
+    var width = document.getElementById("view_container").offsetWidth;
+    var height = 400;
+    var x = 0;
+    var xPositive = true;
+
+    p.setup = function(){
+        p.createCanvas(width,height);
+    }
+    p.draw = function(){
+        p.background(0);
+        p.fill(0,0,255);
+        p.rect(width - 150, 0, 150,150);
+        p.fill(255,0,0);
+        p.circle(width - 75, 75, 75);
+        if(x + 50 >= width){
+            xPositive = false;
+        }else if(x <= 0){
+            xPositive = true;
+        }
+        if(xPositive == true){
+            x += 2;
+        }else{
+            x -= 2;
+        }
+        p.fill(249,242,83);
+        p.rect(x,height/2, 50,50);
+    }
+}
+
+var taskNine = function(p){
+    var width = document.getElementById("view_container").offsetWidth;
+    var height = 400;
+
+    p.setup = function(){
+        p.createCanvas(width, height);
+    }
+
+    p.draw = function(){
+        p.fill(255,0,0);
+        p.rect(width-100, 0, 100,100);
+        p.fill(0,255,0);
+        p.rect(width-100,height-100,100,100);
+        p.fill(0,0,255);
+        p.rect(0,height-100,100,100);
+    }
+}
+var taskEight = function(p){
+    var width = document.getElementById("view_container").offsetWidth;
+    var height = 400;
+    var x = 0;
+    var y = height - 50;
+    var stage = 0;
+
+    p.setup = function(){
+        p.createCanvas(width, height);
+    }
+
+    p.draw = function(){
+        p.background(0);
+        p.fill(255);
+        p.rect(width/4, height/2, 30, height/2);
+        p.rect(width * 2/4, 0, 30, height /2 );
+        p.rect(width * 3/4, height/2, 30, height /2 );
+        p.fill(255,0,0);
+        p.rect(width - 50, 0, 50,50);
+        if(stage == 0){
+            if(y <= 0){
+                stage = 1;
+            }
+            y -= 3;
+        }else if(stage == 1){
+            if(x + 50 >= (width * 2/4)){
+                stage = 2;
+            }
+            x += 3;
+        }else if(stage == 2){
+            if(y + 50 >= height){
+                stage = 3;
+            }
+            y += 3;
+        }else if(stage == 3){
+            if(x + 50 >= (width * 3/4)){
+                stage = 4;
+            }
+            x += 3;
+        }else if(stage == 4){
+            if(y <= 0){
+                stage = 5;
+            }
+            y -= 2;
+        }else if(stage == 5){
+            if(x + 50 >= width){
+                stage = 6;
+            }
+            x += 2;
+        }else{
+            stage = 0;
+            x = 0;
+            y = height - 50;
+        }
+        p.fill(0,0,255);
+        p.rect(x,y,50,50);
+    }
+}
+
+var taskSeven = function(p){
+    var width = document.getElementById("view_container").offsetWidth;
+    var xBlue = 0;
+    var xRed = width ;
+    var xBluePositive = true;
+    var xRedPositive = false;
+
+    p.setup = function(){
+        p.createCanvas(width,400);
+    }
+
+    p.draw = function(){
+        p.background(0);
+        if(xBluePositive == true){
+            xBlue += 2;
+        }else{
+            xBlue -= 2;
+        }
+        if(xBlue + 50 > width){
+            xBluePositive = false;
+        }
+        if(xBlue - 50 <= 0){
+            xBluePositive = true;
+        }
+        if(xRedPositive == true){
+            xRed += 2;
+        }else{
+            xRed -= 2;
+        }
+        if(xRed + 50 > width){
+            xRedPositive = false;
+        }
+        if(xRed - 50 <= 0){
+            xRedPositive = true;
+        }
+        p.fill(0,0,255);
+        p.rect(xBlue,50,50,50);
+        p.fill(255,0,0);
+        p.rect(xRed, 200, 50, 50);
+    }
+}
+
 var taskSix = function (p) {
     var width = document.getElementById("view_container").offsetWidth;
     var height = 400;

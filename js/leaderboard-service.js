@@ -14,7 +14,7 @@ var LeaderboardService = {
     list: function () {
 
         $.get("api/leaderboard/sorted", function (leaderboard) {
-
+            
             myp5.remove();
             $('#submit-form').hide();
             $('#leaderboard').show();
