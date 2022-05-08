@@ -13,7 +13,6 @@
 </head>
 
 <body id="holder">
-
   <div class="container">
 
     <div class="row" id="view_container"></div>
@@ -38,25 +37,35 @@
         <h3 id="score-holder">SCORE = 0</h3>
       </div>
     </div>
-    
-    <form id = "submit-form">
+
+    <form id="submit-form">
       <div class="row">
-           <div class="col-md-3 offset-md-4">
-            <input type="text" id = "test" class="form-control"  placeholder="Enter your username">
-           </div>
-           <div class="col-md-1">
-            <button type="submit" class="btn btn-outline-success">Submit</button>
-           </div>
+        <div class="col-md-3 offset-md-4">
+          <input type="text" id="test" class="form-control" placeholder="Enter your username">
+        </div>
+        <div class="col-md-1">
+          <button type="submit" class="btn btn-outline-success" id="submit-button">Submit</button>
+        </div>
       </div>
-   </div>
-  </form>
-    
+    </form>
+
+    <div id="leaderboard" class="row">
+      <h1>Dummy leaderboard</h1>
+    </div>
+  </div>
+
+
   </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 <script src="js/sketch.js"></script>
 <script src="js/router.js"></script>
+<script src="js/leaderboard-service.js"></script>
+<script>
+  LeaderboardService.init();
+</script>
 
 </html>
