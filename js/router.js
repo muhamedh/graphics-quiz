@@ -15,7 +15,7 @@ $('body').one( "keypress", function() {
    $("#score").show();
    
    
-   t1(); // comment to t1 when finished testing
+   t1(); // starts the quiz functions
    
 });
 
@@ -215,7 +215,6 @@ var t5 = function(){
     });
 
     $('#option3').one("click", function(){
-        console.log('correct!');
         score += 100;
         $("#score-holder").html("SCORE = " + score);
         disableEventHandler();

@@ -21,3 +21,10 @@ body{
 .btn:hover{
     background-color: #1eb60e;
 }
+h3{
+    color:#1eb60e !important;
+    text-align: center !important;
+}
+label{
+    color: #1eb60e !important;
+}

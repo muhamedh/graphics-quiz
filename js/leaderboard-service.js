@@ -1,12 +1,14 @@
 var LeaderboardService = {
     init: function () {
-
+        $('#success-message').attr('hidden',true);
         $('#submit-form').validate({
             submitHandler: function (form) {
+                console.log(form);
                 $('#submit-button').prop('disabled', true);
                 var username = $("#test").val();
                 var data = { username, score };
                 LeaderboardService.add(data);
+                $('#submit-form').attr('hidden',true);
             }
         });
     },
@@ -58,7 +60,7 @@ var LeaderboardService = {
             contentType: "application/json",
             dataType: "json",
             success: function (result) {
-                LeaderboardService.list();
+                $('#success-message').attr('hidden',false);
             }
         });
     }
