@@ -3,7 +3,6 @@ var LeaderboardService = {
         $('#success-message').attr('hidden',true);
         $('#submit-form').validate({
             submitHandler: function (form) {
-                console.log(form);
                 $('#submit-button').prop('disabled', true);
                 var username = $("#test").val();
                 var data = { username, score };
